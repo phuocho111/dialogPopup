@@ -1,6 +1,6 @@
 <template>
     <div>
-        <button :class="[ elicButton ? 'elicButton' : 'cancelButton', 'button']">{{ buttonName }}</button>
+        <button @click="buttonClick()" :class="[ elicButton ? 'elicButton' : 'cancelButton', 'button']">{{ buttonName }}</button>
     </div>
 </template>
 <script>
@@ -17,6 +17,11 @@ export default {
         button: {
             type: String,
             default: () =>''
+        },
+    },
+    methods: {
+        buttonClick() {
+            this.$emit('handleCommonButton')
         }
     }
 }

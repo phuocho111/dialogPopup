@@ -1,6 +1,11 @@
 <template>
     <div>
-        <dialogPopupCommon :linkImage="alertImage" :message="messagePopup"/>
+        <dialogPopupCommon 
+        :linkImage="alertImage" 
+        :message="messagePopup"
+        :cancelButton="cancelButtonAlert"
+        :comfirmButton="comfirmButtonAlert"
+        />
     </div>
 </template>
 <script>
@@ -10,7 +15,9 @@ export default {
   data(){
     return {
       messagePopup: 'ログアウトします。\nよろしいですか？',
-      alertImage: require("@/assets/icon/alert.svg")
+      alertImage: require("@/assets/icon/alert.svg"),
+      cancelButtonAlert: 'キャンセル',
+      comfirmButtonAlert: 'OK'
     }
   },
   components: {
