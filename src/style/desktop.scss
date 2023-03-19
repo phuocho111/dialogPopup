@@ -1,0 +1,50 @@
+.message-area {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    background: #36414D;
+    gap: 30px;
+    max-width: 335px;
+    box-sizing: content-box;
+    .image-popup {
+        padding-top: 30px;
+    }
+    .message-popup {
+        font-family: 'Noto Sans CJK JP';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 26px;
+        padding: 0px 20px 20px 20px;
+        text-align: center;
+        letter-spacing: 0.7px;
+        color: #FFFFFF;
+        max-width: 150px;
+    }
+}
+.button-area {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 0  auto;
+    padding:10px 0;
+    gap: 10px;
+    max-width: 335px;
+    background: #0D141A;
+    .button {
+        width: 152.5px;
+        height: 40px;
+        border-radius: 2px;
+    }
+    .elicButton {
+        background: linear-gradient(270deg, #36DEE5 0%, #B647CC 100%);
+        color: #000000;
+    }
+    .cancelButton {
+        background: #1F2E3D;
+        color: #22C5E6;
+    }
+}
