@@ -8,7 +8,7 @@ import dialogPopupInfo from './dialogPopup/dialogPopupInfo.vue';
 export default {
     name:'elicAi',
     components: {
-        dialogPopupInfo
+        dialogPopupInfo,
     }
 }
 </script>

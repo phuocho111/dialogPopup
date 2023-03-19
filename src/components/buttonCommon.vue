@@ -1,6 +1,6 @@
 <template>
     <div>
-        <button @click="buttonClick()" :class="[ elicButton ? 'elicButton' : 'cancelButton', 'button']">{{ buttonName }}</button>
+        <button @click="buttonClick()" :class="[ elicButton ? 'elicButton' : 'cancelButton', 'buttonCommon']">{{ buttonName }}</button>
     </div>
 </template>
 <script>
@@ -13,10 +13,6 @@ export default {
         elicButton: {
             type: [Boolean, String],
             default: false
-        },
-        button: {
-            type: String,
-            default: () =>''
         },
     },
     methods: {
