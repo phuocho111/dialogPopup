@@ -1,6 +1,9 @@
 <template>
     <div>
-        <button @click="buttonClick()" :class="[ elicButton ? 'elicButton' : 'cancelButton', 'buttonCommon']">{{ buttonName }}</button>
+        <button @click="buttonClick()" :class="[ elicButton ? 'elic-button' : 'cancel-button', 'common-button']">
+            <slot></slot>
+            {{ buttonName }}
+        </button>
     </div>
 </template>
 <script>

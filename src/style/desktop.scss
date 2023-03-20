@@ -16,8 +16,7 @@
         font-style: normal;
         font-weight: 400;
         font-size: 14px;
-        line-height: 26px;
-        padding: 0px 20px 20px 20px;
+        padding: 0;
         text-align: center;
         letter-spacing: 0.7px;
         color: #FFFFFF;
@@ -34,16 +33,21 @@
     gap: 10px;
     max-width: 335px;
     background: #0D141A;
-    .buttonCommon {
+    .common-button {
         width: 152.5px;
         height: 40px;
         border-radius: 2px;
+        font-family: 'Noto Sans CJK JP';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 13px;
+        border: none;
     }
-    .elicButton {
+    .elic-button {
         background: linear-gradient(270deg, #36DEE5 0%, #B647CC 100%);
         color: #000000;
     }
-    .cancelButton {
+    .cancel-button {
         background: #1F2E3D;
         color: #22C5E6;
     }

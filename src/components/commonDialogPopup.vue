@@ -4,23 +4,19 @@
             <div class="image-popup">
                 <img :src="linkImage" alt="">
             </div>
-            <span class="message-popup">{{ message }}</span>
+            <slot></slot>
         </div>
         <div class="button-area">
-            <button-common @handleCommonButton="handleCancelButton()" :buttonName="cancelButton" ></button-common>
-            <button-common @handleCommonButton="handleConfirmButton()" :buttonName="comfirmButton" elicButton="true" ></button-common>
+            <commonButton @handleCommonButton="handleCancelButton()" :buttonName="cancelButton" ></commonButton>
+            <commonButton @handleCommonButton="handleConfirmButton()" :buttonName="comfirmButton" elicButton="true" ></commonButton>
         </div>
     </div>
 </template>
 <script>
-import buttonCommon from './buttonCommon.vue';
+import commonButton from './commonButton.vue';
 export default {
-    components: { buttonCommon },
+    components: { commonButton },
     props: {
-        message: {
-            type: String,
-            default: ''
-        }, 
         linkImage: {
             type: String,
             default: () => ''

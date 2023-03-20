@@ -1,17 +1,18 @@
 <template>
     <div>
-        <dialogPopupCommon 
+        <commonDialogPopup 
         :linkImage="infoImage" 
-        :message="messagePopup"
         :cancelButton="cancelButtonInfo"
         :comfirmButton="comfirmButtonInfo"
         @buttonCancel = "InfoButtonCancel()"
         @buttonConfirm = "InfoButtonConfirm()"
-        />
+        >
+          <span class="message-popup">{{ messagePopup }}</span>
+        </commonDialogPopup>
     </div>
 </template>
 <script>
-import dialogPopupCommon from '../dialogPopupCommon.vue'
+import commonDialogPopup from '../commonDialogPopup.vue'
 export default {
   name:'dialogPopupInfo',
   data(){
@@ -23,7 +24,7 @@ export default {
     }
   },
   components: {
-    dialogPopupCommon
+    commonDialogPopup
   },
   methods: {
     InfoButtonCancel() {
