@@ -1,7 +1,7 @@
 <template>
     <div class="">
         <button @click="handleShowPopup()">elic Button</button>
-        <div class="modal" :hidden="hiddenDialog">
+        <div class="modal-popup" :hidden="hiddenDialog">
             <dialogPopupInfo 
             @cancelDialog="handleCancelDialog()"
             @confirmDialog="handleConfirmDialog()"
