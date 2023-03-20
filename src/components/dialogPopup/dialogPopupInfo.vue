@@ -1,6 +1,6 @@
 <template>
     <div>
-        <commonDialogPopup 
+        <baseDialogPopup 
         :linkImage="infoImage" 
         :cancelButton="cancelButtonInfo"
         :comfirmButton="comfirmButtonInfo"
@@ -8,11 +8,11 @@
         @buttonConfirm = "InfoButtonConfirm()"
         >
           <span class="message-popup">{{ messagePopup }}</span>
-        </commonDialogPopup>
+        </baseDialogPopup>
     </div>
 </template>
 <script>
-import commonDialogPopup from '../commonDialogPopup.vue'
+import baseDialogPopup from '../baseDialogPopup.vue'
 export default {
   name:'dialogPopupInfo',
   data(){
@@ -24,7 +24,7 @@ export default {
     }
   },
   components: {
-    commonDialogPopup
+    baseDialogPopup
   },
   methods: {
     InfoButtonCancel() {

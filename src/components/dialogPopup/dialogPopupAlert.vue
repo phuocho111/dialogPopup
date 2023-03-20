@@ -1,6 +1,6 @@
 <template>
     <div>
-        <commonDialogPopup 
+        <baseDialogPopup 
         :linkImage="alertImage" 
         :message="messagePopup"
         :cancelButton="cancelButtonAlert"
@@ -9,7 +9,7 @@
     </div>
 </template>
 <script>
-import commonDialogPopup from '../commonDialogPopup.vue'
+import baseDialogPopup from '../baseDialogPopup.vue'
 export default {
   name:'dialogPopupInfo',
   data(){
@@ -21,7 +21,7 @@ export default {
     }
   },
   components: {
-    commonDialogPopup
+    baseDialogPopup
   }
 }
 </script>

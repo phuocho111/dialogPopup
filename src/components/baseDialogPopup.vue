@@ -7,15 +7,15 @@
             <slot></slot>
         </div>
         <div class="button-area">
-            <commonButton @handleCommonButton="handleCancelButton()" :buttonName="cancelButton" ></commonButton>
-            <commonButton @handleCommonButton="handleConfirmButton()" :buttonName="comfirmButton" elicButton="true" ></commonButton>
+            <baseButton @handleCommonButton="handleCancelButton()" :buttonName="cancelButton" ></baseButton>
+            <baseButton @handleCommonButton="handleConfirmButton()" :buttonName="comfirmButton" elicButton="true" ></baseButton>
         </div>
     </div>
 </template>
 <script>
-import commonButton from './commonButton.vue';
+import baseButton from './baseButton.vue';
 export default {
-    components: { commonButton },
+    components: { baseButton },
     props: {
         linkImage: {
             type: String,
