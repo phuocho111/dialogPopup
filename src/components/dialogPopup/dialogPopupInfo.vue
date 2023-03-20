@@ -28,10 +28,10 @@ export default {
   },
   methods: {
     InfoButtonCancel() {
-      console.log('cancel')
+      this.$emit('cancelDialog')
     },
     InfoButtonConfirm() {
-      console.log('OK')
+      this.$emit('confirmDialog')
     }
   }
 }
