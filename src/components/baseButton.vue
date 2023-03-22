@@ -14,7 +14,7 @@ export default {
             default: ''
         },
         elicButton: {
-            type: [Boolean, String],
+            type: Boolean,
             default: false
         },
     },

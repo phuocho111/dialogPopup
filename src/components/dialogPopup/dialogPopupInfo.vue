@@ -4,6 +4,7 @@
         :linkImage="infoImage" 
         :cancelButton="cancelButtonInfo"
         :comfirmButton="comfirmButtonInfo"
+        :active="showPopup"
         @buttonCancel = "InfoButtonCancel()"
         @buttonConfirm = "InfoButtonConfirm()"
         >
@@ -21,6 +22,12 @@ export default {
       infoImage: require("@/assets/icon/info.svg"),
       cancelButtonInfo: 'キャンセル',
       comfirmButtonInfo:'OK'
+    }
+  },
+  props: {
+    showPopup: {
+      type: Boolean,
+      default:  true
     }
   },
   components: {

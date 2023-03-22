@@ -1,7 +1,6 @@
 .modal-popup {
     position: fixed;
     z-index: 1;
-    padding-top: 100px;
     left: 0;
     top: 0;
     width: 100%;
@@ -9,57 +8,80 @@
     overflow: auto; 
     background-color: rgba(0,0,0,0.4);
 }
-.message-area {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;
-    background: #36414D;
-    gap: 30px;
-    max-width: 335px;
-    box-sizing: content-box;
-    .image-popup {
-        padding-top: 30px;
+
+.dialog-popup {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    &.open-popup {
+        animation: openPopup .5s ease forwards;
     }
-    .message-popup {
-        font-family: 'Noto Sans CJK JP';
-        font-style: normal;
-        font-weight: 400;
-        font-size: 14px;
-        padding: 0;
-        text-align: center;
-        letter-spacing: 0.7px;
-        color: #FFFFFF;
-        max-width: 150px;
+    &.close-popup {
+        animation: closePopup .5s ease forwards;
+    }
+    .message-area {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+        background: #36414D;
+        gap: 30px;
+        max-width: 335px;
+        box-sizing: content-box;
+        .image-popup {
+            padding-top: 30px;
+        }
+        .message-popup {
+            font-family: 'Noto Sans CJK JP';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 14px;
+            padding: 0;
+            text-align: center;
+            letter-spacing: 0.7px;
+            color: #FFFFFF;
+            max-width: 150px;
+        }
+    }
+    .button-area {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        margin: 0  auto;
+        padding:10px;
+        gap: 10px;
+        max-width: 335px;
+        background: #0D141A;
+        .common-button {
+            width: 152.5px;
+            height: 40px;
+            border-radius: 2px;
+            font-family: 'Noto Sans CJK JP';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 13px;
+            border: none;
+        }
+        .elic-button {
+            background: linear-gradient(270deg, #36DEE5 0%, #B647CC 100%);
+            color: #000000;
+        }
+        .cancel-button {
+            background: #1F2E3D;
+            color: #22C5E6;
+        }
     }
 }
-.button-area {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    margin: 0  auto;
-    padding:10px 0;
-    gap: 10px;
-    max-width: 335px;
-    background: #0D141A;
-    .common-button {
-        width: 152.5px;
-        height: 40px;
-        border-radius: 2px;
-        font-family: 'Noto Sans CJK JP';
-        font-style: normal;
-        font-weight: 700;
-        font-size: 13px;
-        border: none;
-    }
-    .elic-button {
-        background: linear-gradient(270deg, #36DEE5 0%, #B647CC 100%);
-        color: #000000;
-    }
-    .cancel-button {
-        background: #1F2E3D;
-        color: #22C5E6;
-    }
+
+/* Add animation */
+@keyframes openPopup {
+    from { top: 0; opacity: 0;};
+    to { top: 50%; opacity: 1;};
+}
+@keyframes closePopup {
+    from { top: 50%; opacity: 1;};
+    to { top: 0; opacity: 0;};
 }

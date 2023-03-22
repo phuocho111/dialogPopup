@@ -1,10 +1,11 @@
 <template>
     <div class="">
         <button @click="handleShowPopup()">elic Button</button>
-        <div class="modal-popup" :hidden="hiddenDialog">
+        <div class="modal-popup" v-show="showDialog">
             <dialogPopupInfo 
             @cancelDialog="handleCancelDialog()"
             @confirmDialog="handleConfirmDialog()"
+            :showPopup="openPopup ? 'open-popup' : 'close-popup'"
             />
         </div>
     </div>
@@ -15,7 +16,8 @@ export default {
     name:'elicAi',
     data() {
         return {
-            hiddenDialog: true
+            showDialog: false,
+            openPopup: false
         }
     },
     components: {
@@ -23,13 +25,20 @@ export default {
     },
     methods: {
         handleShowPopup() {
-            this.hiddenDialog = false
+            this.showDialog = true
+            this.openPopup = true
         },
         handleCancelDialog() {
-            this.hiddenDialog = true
+            this.openPopup = false
+            setTimeout(() => {
+                this.showDialog = false
+            }, 500);
         },
         handleConfirmDialog() {
-            this.hiddenDialog = true
+            this.openPopup = false
+            setTimeout(() => {
+                this.showDialog = false
+            }, 500);
         }
     }
 }

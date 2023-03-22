@@ -1,5 +1,5 @@
 <template>
-    <div class="dialog-popup">
+    <div class="dialog-popup" :class="active">
         <div class="message-area">
             <div class="image-popup">
                 <img :src="linkImage" alt="">
@@ -19,15 +19,19 @@ export default {
     props: {
         linkImage: {
             type: String,
-            default: () => ''
+            default: ''
         },
         cancelButton: {
             type: String,
-            default: () => ''
+            default: ''
         },
         comfirmButton: {
             type: String,
-            default: () => ''
+            default: ''
+        },
+        active: {
+            type: String,
+            default: ''
         }
     },
     methods: {
