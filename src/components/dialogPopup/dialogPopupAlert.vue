@@ -1,11 +1,15 @@
 <template>
     <div>
         <baseDialogPopup 
-        :linkImage="alertImage" 
+        :imageMessage="alertImage" 
         :message="messagePopup"
-        :cancelButton="cancelButtonAlert"
-        :comfirmButton="comfirmButtonAlert"
-        />
+        :confirmButton="confirmButtonAlert"
+        :active="showAlert"
+        :isMutipleButton="false"
+        @buttonConfirm="AlertButtonConfirm"
+        >
+          <span class="message-popup">{{ messagePopup }}</span>
+        </baseDialogPopup>
     </div>
 </template>
 <script>
@@ -14,14 +18,24 @@ export default {
   name:'dialogPopupInfo',
   data(){
     return {
-      messagePopup: 'ログアウトします。\nよろしいですか？',
+      messagePopup: 'ログアウトします。\n よろしいですか。',
       alertImage: require("@/assets/icon/alert.svg"),
-      cancelButtonAlert: 'キャンセル',
-      comfirmButtonAlert: 'OK'
+      confirmButtonAlert: 'OK'
+    }
+  },
+  props: {
+    showAlert: {
+      type: Boolean,
+      default:  true
     }
   },
   components: {
     baseDialogPopup
+  },
+  methods: {
+    AlertButtonConfirm(){
+      this.$emit('confirmAlert')
+    }
   }
 }
 </script>

@@ -8,27 +8,31 @@
     overflow: auto; 
     background-color: rgba(0,0,0,0.4);
 }
-
 .dialog-popup {
+    max-width: 464px;
+    min-width: 335px;
+    margin: 0 auto;
     position: absolute;
-    top: 50%;
+    background: #36414D;
     left: 50%;
+    top: 50%;
     transform: translate(-50%, -50%);
-    &.open-popup {
+    filter: drop-shadow(0px 5px 10px rgba(0, 0, 0, 0.75));
+    &.popup-open {
         animation: openPopup .5s ease forwards;
     }
-    &.close-popup {
+    &.popup-close {
+        // animation: openPopup .5s ease forwards;
         animation: closePopup .5s ease forwards;
+            
     }
     .message-area {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        margin: 0 auto;
         background: #36414D;
         gap: 30px;
-        max-width: 335px;
         box-sizing: content-box;
         .image-popup {
             padding-top: 30px;
@@ -36,13 +40,14 @@
         .message-popup {
             font-family: 'Noto Sans CJK JP';
             font-style: normal;
+            word-break: break-all;
+            white-space: pre-wrap;
             font-weight: 400;
             font-size: 14px;
-            padding: 0;
+            padding: 0 24px 20px;
             text-align: center;
             letter-spacing: 0.7px;
             color: #FFFFFF;
-            max-width: 150px;
         }
     }
     .button-area {
@@ -53,7 +58,6 @@
         margin: 0  auto;
         padding:10px;
         gap: 10px;
-        max-width: 335px;
         background: #0D141A;
         .common-button {
             width: 152.5px;
@@ -65,23 +69,23 @@
             font-size: 13px;
             border: none;
         }
-        .elic-button {
+        .button-elic {
             background: linear-gradient(270deg, #36DEE5 0%, #B647CC 100%);
             color: #000000;
         }
-        .cancel-button {
+        .button-cancel {
             background: #1F2E3D;
             color: #22C5E6;
         }
     }
 }
 
-/* Add animation */
+/* Add Animation */
 @keyframes openPopup {
-    from { top: 0; opacity: 0;};
-    to { top: 50%; opacity: 1;};
+    from { top: 0; opacity: 0;}
+    to { top: 50%; opacity: 1;}
 }
 @keyframes closePopup {
-    from { top: 50%; opacity: 1;};
-    to { top: 0; opacity: 0;};
+    from { top: 50%; opacity: 1;}
+    to { top: 0; opacity: 0;}
 }

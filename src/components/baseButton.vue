@@ -1,21 +1,16 @@
 <template>
     <div>
-        <button @click="buttonClick()" :class="[ elicButton ? 'elic-button' : 'cancel-button', 'common-button']">
+        <button @click="buttonClick()" :class="[ elicButton , 'common-button']">
             <slot></slot>
-            {{ buttonName }}
         </button>
     </div>
 </template>
 <script>
 export default {
     props: {
-        buttonName: {
+        elicButton: {
             type: String,
             default: ''
-        },
-        elicButton: {
-            type: Boolean,
-            default: false
         },
     },
     methods: {

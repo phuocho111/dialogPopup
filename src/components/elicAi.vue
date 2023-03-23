@@ -1,11 +1,11 @@
 <template>
     <div class="">
-        <button @click="handleShowPopup()">elic Button</button>
+        <button @click="handleShowPopup()">elic Popup</button>
         <div class="modal-popup" v-show="showDialog">
             <dialogPopupInfo 
             @cancelDialog="handleCancelDialog()"
             @confirmDialog="handleConfirmDialog()"
-            :showPopup="openPopup ? 'open-popup' : 'close-popup'"
+            :showPopup="openPopup ? 'popup-open' : 'popup-close'"
             />
         </div>
     </div>
@@ -17,7 +17,8 @@ export default {
     data() {
         return {
             showDialog: false,
-            openPopup: false
+            openPopup: false,
+            ShowAlert: false
         }
     },
     components: {
@@ -39,7 +40,7 @@ export default {
             setTimeout(() => {
                 this.showDialog = false
             }, 500);
-        }
+        },
     }
 }
 </script>

@@ -1,14 +1,16 @@
 <template>
     <div>
         <baseDialogPopup 
-        :linkImage="infoImage" 
+        :imageMessage="infoImage" 
         :cancelButton="cancelButtonInfo"
-        :comfirmButton="comfirmButtonInfo"
+        :confirmButton="confirmButtonInfo"
         :active="showPopup"
+        :isImage="true"
+        :isMutipleButton="true"
         @buttonCancel = "InfoButtonCancel()"
         @buttonConfirm = "InfoButtonConfirm()"
         >
-          <span class="message-popup">{{ messagePopup }}</span>
+        <template v-slot:contentMessage><span class="message-popup">{{ messagePopup }}</span></template>
         </baseDialogPopup>
     </div>
 </template>
@@ -18,10 +20,10 @@ export default {
   name:'dialogPopupInfo',
   data(){
     return {
-      messagePopup: 'ログアウトします。\nよろしいですか？',
+      messagePopup: 'ログアウトします。\n よろしいですか？',
       infoImage: require("@/assets/icon/info.svg"),
       cancelButtonInfo: 'キャンセル',
-      comfirmButtonInfo:'OK'
+      confirmButtonInfo:'OK'
     }
   },
   props: {
@@ -39,7 +41,7 @@ export default {
     },
     InfoButtonConfirm() {
       this.$emit('confirmDialog')
-    }
+    },
   }
 }
 </script>
