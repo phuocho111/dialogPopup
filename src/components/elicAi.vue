@@ -5,7 +5,7 @@
             <dialogPopupInfo 
             @cancelDialog="handleCancelDialog()"
             @confirmDialog="handleConfirmDialog()"
-            :showPopup="openPopup ? 'popup-open' : 'popup-close'"
+            :showPopup="openPopup"
             />
         </div>
     </div>

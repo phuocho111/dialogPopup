@@ -1,5 +1,5 @@
 <template>
-    <div class="dialog-popup" :class="active">
+    <div class="dialog-popup" :class="active ? 'popup-open' : 'popup-close'">
         <div class="title-area" v-if="isTitle">
             <slot name= "contentTitle"/>
         </div>
@@ -53,8 +53,8 @@ export default {
             default: ''
         },
         active: {
-            type: String,
-            default: ''
+            type: Boolean,
+            default: false
         },
         isMutipleButton: {
             type: Boolean,

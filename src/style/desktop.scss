@@ -9,8 +9,7 @@
     background-color: rgba(0,0,0,0.4);
 }
 .dialog-popup {
-    max-width: 464px;
-    min-width: 335px;
+    max-width: 335px;
     margin: 0 auto;
     position: absolute;
     background: #36414D;
@@ -72,10 +71,21 @@
         .button-elic {
             background: linear-gradient(270deg, #36DEE5 0%, #B647CC 100%);
             color: #000000;
+            &:hover {
+                background: #22C5E6;
+            }
         }
         .button-cancel {
             background: #1F2E3D;
             color: #22C5E6;
+            &:hover {
+                background: #22C5E6;
+                color: #000000;
+            }
+            &:active {
+                color: #22C5E6;
+                background: #1F2E3D;
+            }
         }
     }
 }
